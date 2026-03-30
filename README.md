@@ -1,4 +1,3 @@
-<img width="2844" height="1678" alt="resultsbasic_axi_simulation" src="https://github.com/user-attachments/assets/cc071274-bd13-4aad-a0a9-bc4c1d88be66" />
 AXI4-Lite Register Slave
 
 This project is developed under the guidance of Linda Megerdichian as part of my learning in Design Verification and RTL design.
@@ -18,3 +17,7 @@ The design has been compiled and simulated successfully using QuestaSim after ad
 Sanity Stimulus has been added to Top and a basic write followed by a read transaction was performed from the top module. The read data matched the written data, confirming correct functionality for this scenario.
 
 Simulation output is included in the "results/" folder as proof of execution.
+
+## Simulation Result
+
+Simulation output showing successful write and read transactions is available in the `results/` folder.
