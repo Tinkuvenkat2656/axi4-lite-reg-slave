@@ -1,3 +1,4 @@
+<img width="2844" height="1678" alt="resultsbasic_axi_simulation" src="https://github.com/user-attachments/assets/cc071274-bd13-4aad-a0a9-bc4c1d88be66" />
 AXI4-Lite Register Slave
 
 This project is developed under the guidance of Linda Megerdichian as part of my learning in Design Verification and RTL design.
