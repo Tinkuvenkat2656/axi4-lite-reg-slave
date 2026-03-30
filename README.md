@@ -9,3 +9,11 @@ I did not copy this implementation directly. I went through AXI4-Lite documentat
 The intention behind keeping this design simple is to use it as a starting point for building a UVM testbench. A clean and straightforward DUT makes it easier to write, debug, and validate the verification environment without unnecessary complications.
 
 This design currently focuses on correctness and clarity. I will continue improving it by adding better handling of corner cases and developing a complete UVM-based verification environment around it.
+
+Simulation Status
+
+The design has been compiled and simulated successfully using QuestaSim after adding interface and top module along with DUT.
+
+Sanity Stimulus has been added to Top and a basic write followed by a read transaction was performed from the top module. The read data matched the written data, confirming correct functionality for this scenario.
+
+Simulation output is included in the "results/" folder as proof of execution.
