@@ -28,7 +28,7 @@ Completed so far:
 - sequencer
 - driver
 
-The UVM package file (`tb/axi_uvm_pkg.sv`) was compiled successfully in QuestaSim with 0 errors and 0 warnings.
+The UVM package file (`tb/axi_uvm_pkg.sv`) was compiled successfully in QuestaSim with 0 errors and 0 warnings. Simulation output is included in the "results/" folder as proof of execution.
 
 At this stage, the UVM components have been compiled and debugged up to the driver level. Full UVM simulation is the next step after adding the remaining components such as monitor, agent, environment, and test.
 
