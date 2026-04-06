@@ -18,6 +18,20 @@ Sanity Stimulus has been added to Top and a basic write followed by a read trans
 
 Simulation output is included in the "results/" folder as proof of execution.
 
+## UVM Testbench Progress
+
+As the next step in verification, I started building the initial UVM-based testbench for the AXI4-Lite register slave.
+
+Completed so far:
+- transaction class
+- basic write sequence
+- sequencer
+- driver
+
+The UVM package file (`tb/axi_uvm_pkg.sv`) was compiled successfully in QuestaSim with 0 errors and 0 warnings.
+
+At this stage, the UVM components have been compiled and debugged up to the driver level. Full UVM simulation is the next step after adding the remaining components such as monitor, agent, environment, and test.
+
 ## Simulation Result
 
 Simulation output showing successful write and read transactions is available in the `results/` folder.
