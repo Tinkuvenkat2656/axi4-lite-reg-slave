@@ -1,1 +1,0 @@
-Result screenshots and logs.
