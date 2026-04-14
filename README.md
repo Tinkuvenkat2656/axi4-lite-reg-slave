@@ -32,6 +32,46 @@ The UVM package file (`tb/axi_uvm_pkg.sv`) was compiled successfully in QuestaSi
 
 At this stage, the UVM components have been compiled and debugged up to the driver level. Full UVM simulation is the next step after adding the remaining components such as monitor, agent, environment, and test.
 
+## UVM Testbench Progress
+
+The AXI4-Lite UVM testbench has now been completed and simulated successfully in QuestaSim.
+
+Completed components:
+- transaction class
+- write sequence
+- read sequence
+- sequencer
+- driver
+- monitor
+- scoreboard
+- agent
+- environment
+- test
+
+The directed UVM testbench was compiled and simulated successfully. The simulation transcript confirms:
+- successful write sequence execution
+- successful read sequence execution
+- monitor capture of transactions
+- scoreboard update and read-data match
+- zero UVM errors
+- zero UVM fatals
+
+Waveform and transcript screenshots were captured as proof of successful simulation.
+
+A randomized/constrained version was also attempted, but it could not be simulated on the current system because the available QuestaSim license does not support the SystemVerilog verification feature required for randomization. Therefore, the current verified result in this project is based on the directed UVM testbench.
+
 ## Simulation Result
 
 Simulation output showing successful write and read transactions is available in the `results/` folder.
+
+The final simulation was completed successfully using the directed UVM testbench in QuestaSim.
+
+### Result summary
+- write transaction executed successfully
+- read transaction returned the expected stored data
+- monitor observed both write and read activity
+- scoreboard reported correct read-data match
+- UVM_ERROR = 0
+- UVM_FATAL = 0
+
+The waveform shows the AXI4-Lite signal timing and handshake behavior, and the transcript shows the successful execution log of the UVM testbench.
