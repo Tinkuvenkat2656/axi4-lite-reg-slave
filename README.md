@@ -91,3 +91,21 @@ Therefore, current verification results are based on directed testing.
 ## Results
 
 Simulation outputs (transcript and waveform) are available in the `results/` folder.
+
+---
+
+## Key Learnings
+
+This project helped me move from writing RTL to understanding how designs are actually verified in practice.
+
+Some of the key takeaways:
+
+- Understanding AXI4-Lite handshake at a signal level (VALID/READY behavior) and how incorrect sequencing can break transactions  
+- Realizing the importance of separating design logic (RTL) from verification logic (UVM)  
+- Learning how drivers translate transactions into pin-level activity and how monitors reconstruct them back into transactions  
+- Understanding the role of a scoreboard as a reference model rather than just a comparison block  
+- Recognizing why simple DUT design helps in building and debugging a verification environment  
+- Getting comfortable with the compile → simulate → debug cycle in QuestaSim  
+- Seeing how even a basic directed test can validate functionality, but also its limitations compared to constrained-random testing  
+
+This project shifted my focus from just “making the design work” to thinking in terms of “how to verify that it works under different scenarios.”
