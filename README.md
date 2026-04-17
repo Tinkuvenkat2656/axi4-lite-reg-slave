@@ -1,77 +1,93 @@
-AXI4-Lite Register Slave
+# AXI4-Lite Register Slave
 
-This project is developed under the guidance of Linda Megerdichian as part of my learning in Design Verification and RTL design.
+This project was developed under the guidance of Linda Megerdichian as part of my learning in RTL Design and Design Verification.
 
-The design is an AXI4-Lite register slave that supports basic read and write operations following the AXI4-Lite protocol. It implements the required handshake mechanism between master and slave and provides simple register storage functionality.
+## Overview
 
-I did not copy this implementation directly. I went through AXI4-Lite documentation and references, understood how the protocol works, and then built the design step by step based on my understanding. While doing this, I made some design choices that keep the logic simple and easy to follow instead of making it overly complex.
+This design implements a simple AXI4-Lite Register Slave supporting basic read and write operations. The focus was on understanding the AXI4-Lite protocol and implementing correct handshake behavior between master and slave.
 
-The intention behind keeping this design simple is to use it as a starting point for building a UVM testbench. A clean and straightforward DUT makes it easier to write, debug, and validate the verification environment without unnecessary complications.
+The design includes:
+- AXI4-Lite compliant read and write channels  
+- VALID/READY handshake implementation  
+- Simple register storage model  
 
-This design currently focuses on correctness and clarity. I will continue improving it by adding better handling of corner cases and developing a complete UVM-based verification environment around it.
+Rather than copying an existing implementation, I studied the AXI4-Lite protocol and built the design step by step based on my understanding. The logic was intentionally kept simple and clear to make debugging and verification easier.
 
-Simulation Status
+## Design Goal
 
-The design has been compiled and simulated successfully using QuestaSim after adding interface and top module along with DUT.
+The primary goal of this design was to serve as a clean DUT for building a UVM-based verification environment. Keeping the RTL simple allows better focus on verification strategy without unnecessary complexity in the design.
 
-Sanity Stimulus has been added to Top and a basic write followed by a read transaction was performed from the top module. The read data matched the written data, confirming correct functionality for this scenario.
+---
 
-Simulation output is included in the "results/" folder as proof of execution.
+## RTL Simulation
 
-## UVM Testbench Progress
+The design was compiled and simulated successfully using QuestaSim.
 
-As the next step in verification, I started building the initial UVM-based testbench for the AXI4-Lite register slave.
+A basic sanity test was performed:
+- one write transaction followed by one read transaction  
+- read data matched the written data  
 
-Completed so far:
-- transaction class
-- basic write sequence
-- sequencer
-- driver
+This confirms correct functionality for the basic use case.
 
-The UVM package file (`tb/axi_uvm_pkg.sv`) was compiled successfully in QuestaSim with 0 errors and 0 warnings. Simulation output is included in the "results/" folder as proof of execution.
+Simulation output is available in the `results/` folder.
 
-At this stage, the UVM components have been compiled and debugged up to the driver level. Full UVM simulation is the next step after adding the remaining components such as monitor, agent, environment, and test.
+---
 
-## UVM Testbench Progress
+## UVM Testbench Development
 
-The AXI4-Lite UVM testbench has now been completed and simulated successfully in QuestaSim.
+The project was extended to include a UVM-based verification environment.
 
-Completed components:
-- transaction class
-- write sequence
-- read sequence
-- sequencer
-- driver
-- monitor
-- scoreboard
-- agent
-- environment
-- test
+### Implemented Components
+- transaction class  
+- write and read sequences  
+- sequencer  
+- driver  
+- monitor  
+- scoreboard  
+- agent  
+- environment  
+- test  
 
-The directed UVM testbench was compiled and simulated successfully. The simulation transcript confirms:
-- successful write sequence execution
-- successful read sequence execution
-- monitor capture of transactions
-- scoreboard update and read-data match
-- zero UVM errors
-- zero UVM fatals
+The UVM testbench was compiled and simulated successfully using a directed test.
 
-Waveform and transcript screenshots were captured as proof of successful simulation.
+### Verification Results
+- write sequence executed successfully  
+- read sequence returned expected data  
+- monitor captured transactions correctly  
+- scoreboard validated read data match  
+- UVM_ERROR = 0  
+- UVM_FATAL = 0  
 
-A randomized/constrained version was also attempted, but it could not be simulated on the current system because the available QuestaSim license does not support the SystemVerilog verification feature required for randomization. Therefore, the current verified result in this project is based on the directed UVM testbench.
+Waveform and transcript outputs are included in the `results/` folder as proof of simulation.
 
-## Simulation Result
+---
 
-Simulation output showing successful write and read transactions is available in the `results/` folder.
+## Limitation
 
-The final simulation was completed successfully using the directed UVM testbench in QuestaSim.
+A constrained-random version was attempted, but could not be simulated due to limitations of the available QuestaSim license (SystemVerilog verification features not supported).
 
-### Result summary
-- write transaction executed successfully
-- read transaction returned the expected stored data
-- monitor observed both write and read activity
-- scoreboard reported correct read-data match
-- UVM_ERROR = 0
-- UVM_FATAL = 0
+Therefore, current verification results are based on directed testing.
 
-The waveform shows the AXI4-Lite signal timing and handshake behavior, and the transcript shows the successful execution log of the UVM testbench.
+---
+
+## Simulation Result Summary
+
+- successful write and read operations  
+- correct AXI4-Lite handshake behavior  
+- verified data integrity through scoreboard  
+- clean simulation with no UVM errors or fatals  
+
+---
+
+## Next Steps
+
+- Add constrained-random stimulus (when license permits)  
+- Improve corner case coverage  
+- Add assertions and functional coverage  
+- Expand verification scenarios  
+
+---
+
+## Results
+
+Simulation outputs (transcript and waveform) are available in the `results/` folder.
